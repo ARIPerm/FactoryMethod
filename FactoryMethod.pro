@@ -1,4 +1,4 @@
-QT += widgets
+QT += widgets core network
 
 CONFIG += c++17
 
@@ -7,10 +7,18 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Factory/fileloader.cpp \
+    Factory/idataloader.cpp \
+    Factory/networkloader.cpp \
+    Factory/sqlloader.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    Factory/fileloader.h \
+    Factory/idataloader.h \
+    Factory/networkloader.h \
+    Factory/sqlloader.h \
     mainwindow.h
 
 FORMS += \
