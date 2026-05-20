@@ -123,7 +123,7 @@ QList<QString> NetworkLoader::parseJson(const QByteArray &data)
     QJsonDocument doc = QJsonDocument::fromJson(data, &parseError);
 
     if (parseError.error != QJsonParseError::NoError) {
-        qWarning() << "JSON parse error:" << parseError.errorString();
+        qWarning() << "Ошибка парсинга файла Json:" << parseError.errorString();
         return QList<QString>();
     }
 
@@ -155,7 +155,7 @@ QList<QString> NetworkLoader::parseXml(const QByteArray &data)
     }
 
     if (xml.hasError()) {
-        qWarning() << "XML parse error:" << xml.errorString();
+        qWarning() << "Ошибка парсинга файла XML:" << xml.errorString();
         return QList<QString>();
     }
 
@@ -228,7 +228,7 @@ void NetworkLoader::onRequestFinished()
 
     if (reply->error() != QNetworkReply::NoError) {
         context->isSuccess = false;
-        context->errorMessage = QString("Network error: %1").arg(reply->errorString());
+        context->errorMessage = QString("Ошибка сети: %1").arg(reply->errorString());
         context->isCompleted = true;
         reply->deleteLater();
         return;

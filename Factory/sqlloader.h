@@ -15,7 +15,6 @@ public:
 signals:
 
     bool createDatabase(QString path);
-    // IDataLoader interface
 };
 
 #endif // SQLLOADER_H
