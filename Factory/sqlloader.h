@@ -14,6 +14,7 @@ public:
 
 signals:
 
+    bool createDatabase(QString path);
     // IDataLoader interface
 };
 
