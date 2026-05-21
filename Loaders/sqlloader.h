@@ -2,7 +2,7 @@
 #define SQLLOADER_H
 
 #include <QObject>
-#include "Factory/idataloader.h"
+#include "Loaders/idataloader.h"
 
 class SqlLoader : public QObject, IDataLoader
 {

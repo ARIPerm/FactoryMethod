@@ -7,6 +7,10 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Factory/dataprocessor.cpp \
+    Factory/fileprocessor.cpp \
+    Factory/networkprocessor.cpp \
+    Factory/sqlprocessor.cpp \
     Loaders/fileloader.cpp \
     Loaders/idataloader.cpp \
     Loaders/networkloader.cpp \
@@ -15,6 +19,10 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    Factory/dataprocessor.h \
+    Factory/fileprocessor.h \
+    Factory/networkprocessor.h \
+    Factory/sqlprocessor.h \
     Loaders/fileloader.h \
     Loaders/idataloader.h \
     Loaders/networkloader.h \
