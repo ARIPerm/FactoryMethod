@@ -2,9 +2,9 @@
 #define FILELOADER_H
 
 #include <QObject>
-#include "Factory/idataloader.h"
+#include "Loaders/idataloader.h"
 
-class FileLoader : public QObject, IDataLoader
+class FileLoader : public QObject, public IDataLoader
 {
     Q_OBJECT
 public:

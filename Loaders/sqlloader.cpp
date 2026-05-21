@@ -5,6 +5,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
+#include <QDebug>
 
 SqlLoader::SqlLoader(QObject *parent)
     : QObject{parent}
@@ -84,6 +85,7 @@ bool SqlLoader::createDatabase(QString path)
         insertQuery.bindValue(0, value);
         if (!insertQuery.exec()) {
             qDebug() << "Ошибка вставки данных в таблицу:" << insertQuery.lastError().text();
+            return false;
         }
     }
 

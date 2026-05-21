@@ -4,9 +4,9 @@
 #include <QObject>
 #include <QNetworkReply>
 #include <QTimer>
-#include "Factory/idataloader.h"
+#include "Loaders/idataloader.h"
 
-class NetworkLoader : public QObject, IDataLoader
+class NetworkLoader : public QObject, public IDataLoader
 {
     Q_OBJECT
 public:

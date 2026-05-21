@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QRadioButton>
+#include <QPushButton>
+#include <QPlainTextEdit>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,5 +22,17 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QRadioButton* _sqlButton;
+    QRadioButton* _fileButton;
+    QRadioButton* _networkButton;
+    QPushButton* _loadButton;
+    QPlainTextEdit* _textEdit;
+
+    void createUi();
+    void setupConnection();
+
+private slots:
+    void onLoadData();
+    void displayData(QList<QString> data);
 };
 #endif // MAINWINDOW_H

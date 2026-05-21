@@ -4,6 +4,7 @@
 #include <QXmlStreamReader>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QDebug>
 
 NetworkLoader::NetworkLoader(QObject *parent)
     : QObject{parent}, _pNetworkManager(new QNetworkAccessManager(this)), _timeoutMs(30000)

@@ -4,7 +4,7 @@
 #include <QObject>
 #include "Loaders/idataloader.h"
 
-class SqlLoader : public QObject, IDataLoader
+class SqlLoader : public QObject, public IDataLoader
 {
     Q_OBJECT
 public:
@@ -12,8 +12,7 @@ public:
 
     QList<QString> load(QString path) override;
 
-signals:
-
+private:
     bool createDatabase(QString path);
 };
 

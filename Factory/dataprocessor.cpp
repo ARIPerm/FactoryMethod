@@ -1,9 +1,10 @@
 #include "dataprocessor.h"
 
-DataProcessor::DataProcessor() {}
-
-QList<QString> DataProcessor::loadData(QString path)
+QList<QString> DataProcessor::loadData(const QString &path)
 {
-    auto loader = const_cast<DataProcessor*>(this)->createLoader();
-    return loader.data()->load(path);
+    auto loader = createLoader();
+    if (loader) {
+        return loader->load(path);
+    }
+    return QList<QString>();
 }

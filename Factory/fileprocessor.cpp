@@ -1,10 +1,11 @@
 #include "fileprocessor.h"
+#include "Loaders/fileloader.h"
 
 FileProcessor::FileProcessor(QObject *parent)
-    : QObject{parent}
+    : QObject{parent}, DataProcessor()
 {}
 
-QScopedPointer<IDataLoader> FileProcessor::createLoader()
+std::unique_ptr<IDataLoader> FileProcessor::createLoader()
 {
-
+    return std::make_unique<FileLoader>(this);
 }

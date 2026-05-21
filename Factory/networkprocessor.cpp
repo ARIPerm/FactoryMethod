@@ -1,10 +1,11 @@
 #include "networkprocessor.h"
+#include "Loaders/networkloader.h"
 
 NetworkProcessor::NetworkProcessor(QObject *parent)
-    : QObject{parent}
+    : QObject{parent}, DataProcessor()
 {}
 
-QScopedPointer<IDataLoader> NetworkProcessor::createLoader()
+std::unique_ptr<IDataLoader> NetworkProcessor::createLoader()
 {
-
+    return std::make_unique<NetworkLoader>(this);
 }

@@ -1,10 +1,11 @@
 #include "sqlprocessor.h"
+#include "Loaders/sqlloader.h"
 
 SqlProcessor::SqlProcessor(QObject *parent)
-    : QObject{parent}
+    : QObject{parent}, DataProcessor()
 {}
 
-QScopedPointer<IDataLoader> SqlProcessor::createLoader()
+std::unique_ptr<IDataLoader> SqlProcessor::createLoader()
 {
-    return QScopedPointer<SqlProcessor>(new SqlProcessor());
+    return std::make_unique<SqlLoader>(this);
 }

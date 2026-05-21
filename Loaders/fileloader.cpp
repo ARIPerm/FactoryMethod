@@ -1,4 +1,5 @@
 #include "fileloader.h"
+#include <QDebug>
 
 FileLoader::FileLoader(QObject *parent)
     : QObject{parent}

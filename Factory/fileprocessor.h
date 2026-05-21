@@ -2,15 +2,16 @@
 #define FILEPROCESSOR_H
 
 #include <QObject>
+#include <memory>
 #include "Factory/dataprocessor.h"
 
-class FileProcessor : public QObject, DataProcessor
+class FileProcessor : public QObject, public DataProcessor
 {
     Q_OBJECT
 public:
     explicit FileProcessor(QObject *parent = nullptr);
 
-    QScopedPointer<IDataLoader> createLoader() override;
+    std::unique_ptr<IDataLoader> createLoader() override;
 
 signals:
 
